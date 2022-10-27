@@ -16,24 +16,22 @@ import validate from '../middleware/validate.js';
 
 const router = express.Router();
 
-router.use(authorizeSignature);
-
 router
     .route('/')
     .get(getPools)
-    .post(addPool);
+    .post(authorizeSignature, addPool);
 
 router
     .route('/:poolId/:type')
-    .delete(deletePool);
+    .delete(authorizeSignature, deletePool);
 
 router
     .route('/whitelisted/:address')
-    .get(getWhitelistedPools);
+    .get(authorizeSignature, getWhitelistedPools);
 
 router
     .route('/blacklisted/:address')
-    .get(getBlacklistedPools);
+    .get(authorizeSignature, getBlacklistedPools);
 
 router.use(notFound);
 
