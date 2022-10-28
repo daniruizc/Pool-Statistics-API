@@ -136,7 +136,7 @@ export const getPools = asyncHandler(async (req, res, next) => {
 
                             let datePastWeek = new Date();
                             datePastWeek.setUTCHours(0, 0, 0, 0);
-                            datePastWeek.setUTCDate(datePastWeek.getUTCDate() - 8);
+                            datePastWeek.setUTCDate(datePastWeek.getUTCDate() - 7);
                             let pastWeek = parseInt(datePastWeek.getTime() / 1000);
 
                             poolData.poolDayData.forEach((stats) => {
