@@ -26,11 +26,11 @@ router
     .delete(authorizeSignature, deletePool);
 
 router
-    .route('/whitelisted/:address')
+    .route('/whitelisted')
     .get(authorizeSignature, getWhitelistedPools);
 
 router
-    .route('/blacklisted/:address')
+    .route('/blacklisted')
     .get(authorizeSignature, getBlacklistedPools);
 
 router.use(notFound);

@@ -247,7 +247,7 @@ export const getPools = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Get whitelisted pools by user
-// @route   GET /api/v1/pools/whitelisted/:address
+// @route   GET /api/v1/pools/whitelisted
 // @access  Public
 export const getWhitelistedPools = asyncHandler(async (req, res, next) => {
     const whitelistedPools = await Pool.find({ userAddress: req.address, type: 'whitelist' });
@@ -255,7 +255,7 @@ export const getWhitelistedPools = asyncHandler(async (req, res, next) => {
 });
 
 // @desc    Get blacklisted pools by user
-// @route   GET /api/v1/pools/blacklisted/:address
+// @route   GET /api/v1/pools/blacklisted
 // @access  Public
 export const getBlacklistedPools = asyncHandler(async (req, res, next) => {
     const blacklistedPools = await Pool.find({ userAddress: req.address, type: 'blacklist' });
